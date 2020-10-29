@@ -8,7 +8,8 @@ class TokendCli < Formula
 
     depends_on "go" => :build
     depends_on "kubectl" => :recommended
-    depends_on "pack-aws" => :recommended
+    depends_on "awscli" => :recommended
+    depends_on "kops" => :recommended
 
     def install
         ENV["GOPATH"] = buildpath
