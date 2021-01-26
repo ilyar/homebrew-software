@@ -1,15 +1,28 @@
 # Homebrew tap
 
+## Use
+
+### Install
+
+Tap a formula repository:
+
     brew tap ilyar/software
 
-## New Formula
+Install software:
 
-Create new a formula:
+    brew install snort3
+    brew install tokend-cli
+    brew install tokend-hgate
+    brew install whaler
 
-    nameFormula=new-tool
-    brew create --autotools --set-name $nameFormula https://github.com/users/repo/archive/version.tar.gz
-    mv $(brew --repository)/Library/Taps/homebrew/homebrew-core/Formula/$nameFormula.rb ./Formula/$nameFormula.rb
+### Upgrade
 
-Edit if need and test installation:
+    brew upgrade
 
-    brew install $(pwd)/Formula/$nameFormula.rb
+## Develop
+
+### New Formula
+
+Create new a formula see `brew create --help`, edit if need and test installation:
+
+    brew install --verbose $(pwd)/Formula/$nameFormula.rb
