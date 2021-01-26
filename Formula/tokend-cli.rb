@@ -12,7 +12,7 @@ class TokendCli < Formula
     ENV["GOPATH"] = buildpath
     (buildpath/"src/gitlab.com/tokend/tokend-cli").install buildpath.children
     cd "src/gitlab.com/tokend/tokend-cli" do
-    system "go", "build", "-o", bin/"tokend", "internal/cmd/genconfig.go"
+      system "go", "build", "-o", bin/"tokend", "internal/cmd/genconfig.go"
     end
   end
 
