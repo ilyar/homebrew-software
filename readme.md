@@ -10,10 +10,8 @@ Tap a formula repository:
 
 Install software:
 
-    brew install snort3
     brew install tokend-cli
     brew install tokend-hgate
-    brew install whaler
 
 ### Upgrade
 
