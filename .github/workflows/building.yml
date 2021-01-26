@@ -6,14 +6,30 @@ on:
       - 'Formula/*'
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Homebrew
+        id: setup
+        uses: Homebrew/actions/setup-homebrew@master
+      - name: Cache gems
+        uses: actions/cache@v1
+        with:
+          path: ${{steps.setup.outputs.gems-path}}
+          key: ${{runner.os}}-rubygems-${{steps.setup.outputs.gems-hash}}
+          restore-keys: ${{runner.os}}-rubygems-
+      - name: Install gems
+        run: brew install-bundler-gems
+      - name: Check formulae
+        run: brew test-bot --only-tap-syntax
   build:
+    needs: check
     strategy:
       fail-fast: false
       matrix:
         os:
-          - ubuntu-16.04
-          - macos-10.15
-          - macos-11.0
+          - ubuntu-latest
+          - macos-latest
     runs-on: ${{matrix.os}}
     steps:
       - name: Set up Homebrew
