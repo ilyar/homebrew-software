@@ -8,14 +8,17 @@ Tap a formula repository:
 
     brew tap ilyar/software
 
-Install software:
+List software:
 
-    brew install tokend-cli
-    brew install tokend-hgate
+    brew tap-info ilyar/software --json | jq -r '.[]|(.formula_names[])'
 
 ### Upgrade
 
     brew upgrade
+
+### Remove a tap
+
+    brew untap ilyar/software
 
 ## Develop
 
