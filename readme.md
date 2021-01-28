@@ -1,5 +1,13 @@
 # Homebrew tap
 
+It is Homebrew tap for binary bottles are currently available only for `x86-64 Linux`.
+
+## FAQ
+
+1. [What does brew tap mean?](https://docs.brew.sh/Taps)
+
+[You can ask a question](https://github.com/tonsoft/homebrew-stable/issues/new?labels=question&template=question.md) in any language (do not limit yourself, for example use Esperanto).
+
 ## Use
 
 ### Install
